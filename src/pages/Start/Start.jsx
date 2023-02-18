@@ -1,0 +1,57 @@
+import React from "react"
+import { View, ScrollView, Text, Image, StyleSheet } from "react-native"
+import DefaultButton from "../../Components/Common/DefaultButton/DefaultButton"
+import { useNavigation } from "@react-navigation/native"
+
+import LifeStatus from "../../Components/Common/LifeStatus/LifeStatus"
+import AppExplanation from "../AppExplanation/AppExplanation"
+
+export default function Start() {
+    const navigation = useNavigation()
+    
+    const handleNavAppExplanation = () => {
+        navigation.navigate(AppExplanation)
+    }
+
+    return (
+        <View style={styles.container}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{ alignItems: "center" }}>
+                    <Image 
+                        source={require("../../../assets/icons/logo3.png")} 
+                        style={styles.logo}
+                    />
+                    <LifeStatus/>
+                    <Text style={styles.description}>
+                        Let's have a better life{"\n"}as if you were playing a game!
+                    </Text>
+                    <DefaultButton
+                        buttonText={"Continue"}
+                        handlePress={handleNavAppExplanation}
+                        width={250}
+                        height={50}
+                    />
+                </View>
+            </ScrollView>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "rgba(21, 21, 21, 0.98)",
+    },
+    logo: {
+        width: 300,
+        height: 60,
+        marginTop: 60,
+        marginBottom: 20,
+    },
+    description: {
+        color: "#FFFFFF",
+        fontSize: 20,
+        textAlign: "center",
+        marginVertical: 60,
+    }
+})
