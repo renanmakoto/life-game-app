@@ -15,7 +15,7 @@ export default function CreateHabit({habitArea, borderColor}) {
                 onPress={handleCreate}
             >
             <Text style={styles.habitTitle}>
-                Add goal {habitArea === "Mind" ? "da" : "do"} {habitArea}
+                Add goal {habitArea === "Mind" ? "of" : "of"} {habitArea}
             </Text>
             </TouchableOpacity>
         </View>
