@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { 
     View, 
     Text, 
@@ -10,8 +10,19 @@ import {
 } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 
+import SelectHabit from "../../Components/HabitPage/SelectHabit"
+import SelectFrequency from "../../Components/HabitPage/SelectFrequency"
+import Notification from "../../Components/HabitPage/Notification"
+import TimeDataPicker from "../../Components/HabitPage/TimeDataPicker"
+
 export default function HabitPage({ route }) {
     const navigation = useNavigation()
+    const [habitInput, setHabitInput] = useState()
+    const [frequencyInput, setFrequencyInput] = useState()
+    const [notificationToggle, setNotificationToggle] = useState()
+    const [dayNotification, setDayNotification] = useState()
+    const [timeNotification, setTimeNotification] = useState()
+
     const { create, habit } = route.params
 
     return (
@@ -33,6 +44,30 @@ export default function HabitPage({ route }) {
                         <View style={styles.inputContainer}>
                             <Text style={styles.area}>{habit?.habitArea}</Text>
                         </View>
+                        <Text style={styles.inputText}>Habit</Text>
+                        <SelectHabit habit={habit} habitInput={setHabitInput} />
+                        <Text style={styles.inputText}>Frequency</Text>
+                        <SelectFrequency 
+                            habitFrequency={habit?.habitFrequency} 
+                            frequencyInput={setFrequencyInput} 
+                        />
+                        {frequencyInput === "Monthly" ? null : (
+                            <Notification
+                                notificationToggle={notificationToggle}
+                                setNotificationToggle={setNotificationToggle}
+                            />
+                        )}
+                        {notificationToggle ? (
+                            frequencyInput === "Monthly" ? null : (
+                                <TimeDataPicker
+                                    frequency={frequencyInput}
+                                    dayNotification={dayNotification}
+                                    timeNotification={timeNotification}
+                                    setDayNotification={setDayNotification}
+                                    setTimeNotification={setTimeNotification}
+                                />
+                            )
+                        ) : null}
                     </View>
                 </View>
             </ScrollView>
