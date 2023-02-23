@@ -14,6 +14,7 @@ import SelectHabit from "../../Components/HabitPage/SelectHabit"
 import SelectFrequency from "../../Components/HabitPage/SelectFrequency"
 import Notification from "../../Components/HabitPage/Notification"
 import TimeDataPicker from "../../Components/HabitPage/TimeDataPicker"
+import UpdateDeleteButton from "../../Components/HabitPage/UpdateExcludeButtons"
 
 export default function HabitPage({ route }) {
     const navigation = useNavigation()
@@ -24,6 +25,39 @@ export default function HabitPage({ route }) {
     const [timeNotification, setTimeNotification] = useState()
 
     const { create, habit } = route.params
+
+    function handleCreateHabit() {
+        if (habitInput === undefined || frequencyInput === undefined) {
+            Alert.alert("You must to select a habit to continue")
+        } else if (
+            notificationToggle === true && 
+            frequencyInput === "Daily" && 
+            timeNotification === undefined
+            ) {
+                Alert.alert("You must to set the notification time")
+        } else if (
+            notificationToggle === true &&
+            frequencyInput === "Daily" &&
+            dayNotification === undefined &&
+            timeNotification === undefined
+            ) {
+                Alert.alert("You must to set the notification time")
+        } else {
+            navigation.navigate("Home", {
+                createdHabit: `Created in ${habit?.habitArea}`,
+            })
+        }
+    }
+
+    function handleUpdateHabit() {
+        if (notificationToggle === true && !dayNotification && !timeNotification) {
+            Alert.alert("You must set the notification frequency and time")
+        } else {
+            navigation.navigate("Home", {
+                updatedHabit: `Updated in ${habit?.habitArea}`
+            })
+        }
+    }
 
     return (
         <View style={styles.container}>

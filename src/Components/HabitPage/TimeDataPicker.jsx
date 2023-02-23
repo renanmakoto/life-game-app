@@ -19,17 +19,21 @@ export default function TimeDataPicker({
 
     const onChange = (_, selectDate) => {
         const currentDate = selectDate || date
-        setShow(Platform.os === "ios")
+        setShow(Platform.OS === "ios")
         setDate(currentDate)
         let tempDate = new Date(currentDate)
         const notificationHour = tempDate.getHours().toString().padStart(2, "0")
-        const notificationMin = tempDate.getHours().toString().padStart(2, "0")
+        const notificationMin = tempDate.getMinutes().toString().padStart(2, "0")
         let dateNotification
 
         if (frequency === "Weekly") {
             dateNotification = selected
         }
         const timeNotification = `${notificationHour}:${notificationMin}`
+
+        setNotificationDate(dateNotification)
+        setNotificationTime(timeNotification)
+
         if (frequency === "Daily") {
             setDayNotification("Daily")
         } else {
