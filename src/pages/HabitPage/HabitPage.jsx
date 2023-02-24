@@ -15,6 +15,7 @@ import SelectFrequency from "../../Components/HabitPage/SelectFrequency"
 import Notification from "../../Components/HabitPage/Notification"
 import TimeDataPicker from "../../Components/HabitPage/TimeDataPicker"
 import UpdateDeleteButton from "../../Components/HabitPage/UpdateExcludeButtons"
+import DefaultButton from "../../Components/Common/DefaultButton/DefaultButton"
 
 export default function HabitPage({ route }) {
     const navigation = useNavigation()
@@ -102,6 +103,25 @@ export default function HabitPage({ route }) {
                                 />
                             )
                         ) : null}
+
+                        {create === false ? (
+                            <UpdateDeleteButton
+                                handleUpdate={handleUpdateHabit}
+                                habitArea={habitArea}
+                                habitInput={habitInput}
+                            />
+                        ) : (
+                            <View>
+                                <DefaultButton
+                                    buttonText={"Create"}
+                                    handlePress={handleCreateHabit}
+                                    width={250}
+                                    height={50}
+                                />
+                            </View>
+                            )
+                        }
+
                     </View>
                 </View>
             </ScrollView>
