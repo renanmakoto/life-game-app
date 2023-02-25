@@ -26,7 +26,7 @@ async function createNotification(
     } else if (dayNotification === "Sunday") {
        weekDay = 7
     }
-}
+
 
 let triggerNotification
 
@@ -55,5 +55,6 @@ await Notifications.scheduleNotificationAsync({
 }).then((id) => {
     console.log(id)
 })
+}
 
 export default { createNotification }

@@ -11,6 +11,7 @@ import {
 import { useNavigation } from "@react-navigation/native"
 import * as Notifications from "expo-notifications"
 
+import NotificationService from "../../Services/NotificationService"
 import SelectHabit from "../../Components/HabitPage/SelectHabit"
 import SelectFrequency from "../../Components/HabitPage/SelectFrequency"
 import Notification from "../../Components/HabitPage/Notification"
@@ -61,6 +62,15 @@ export default function HabitPage({ route }) {
             ) {
                 Alert.alert("You must to set the notification time")
         } else {
+            if (notificationToggle) {
+                NotificationService.createNotification(
+                    habitInput,
+                    frequencyInput,
+                    dayNotification,
+                    timeNotification,
+                )
+            }
+
             HabitsService.createHabit({
                 habitArea: habit?.habitArea,
                 habitName: habitInput,
