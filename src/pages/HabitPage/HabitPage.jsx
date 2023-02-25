@@ -14,8 +14,9 @@ import SelectHabit from "../../Components/HabitPage/SelectHabit"
 import SelectFrequency from "../../Components/HabitPage/SelectFrequency"
 import Notification from "../../Components/HabitPage/Notification"
 import TimeDataPicker from "../../Components/HabitPage/TimeDataPicker"
-import UpdateDeleteButton from "../../Components/HabitPage/UpdateExcludeButtons"
+import UpdateDeleteButton from "../../Components/HabitPage/UpdateDeleteButtons"
 import DefaultButton from "../../Components/Common/DefaultButton/DefaultButton"
+import HabitsService from "../../Services/HabitsService"
 
 export default function HabitPage({ route }) {
     const navigation = useNavigation()
@@ -26,6 +27,9 @@ export default function HabitPage({ route }) {
     const [timeNotification, setTimeNotification] = useState()
 
     const { create, habit } = route.params
+
+    const habitCreated = new Date()
+    const formatDate = `${habitCreated.getFullYear()}-${habitCreated.getMonth()}-${habitCreated.getDate()}`
 
     function handleCreateHabit() {
         if (habitInput === undefined || frequencyInput === undefined) {
@@ -44,9 +48,25 @@ export default function HabitPage({ route }) {
             ) {
                 Alert.alert("You must to set the notification time")
         } else {
+            HabitsService.createHabit({
+                habitArea: habit?.habitArea,
+                habitName: habitInput,
+                habitFrequency: frequencyInput,
+                habitHasNotification: notificationToggle,
+                habitNotificationFrequency: dayNotification,
+                habitNotificationTime: timeNotification,
+                lastCheck: formatDate,
+                daysWithoutChecks: 0,
+                habitIsChecked: 0,
+                progressBar: 1,
+                habitChecks: 0,
+            }).then(() => {
+                Alert.alert("Habit created succesfully!")
+
             navigation.navigate("Home", {
-                createdHabit: `Created in ${habit?.habitArea}`,
+            createdHabit: `Created in ${habit?.habitArea}`,
             })
+        })
         }
     }
 
@@ -54,8 +74,25 @@ export default function HabitPage({ route }) {
         if (notificationToggle === true && !dayNotification && !timeNotification) {
             Alert.alert("You must set the notification frequency and time")
         } else {
+            HabitsService.updateHabit({
+                habitArea: habit?.habitArea,
+                habitName: habitInput,
+                habitFrequency: frequencyInput,
+                habitHasNotification: notificationToggle,
+                habitNotificationFrequency: dayNotification,
+                habitNotificationTime: timeNotification,
+                habitNotificationId: notificationToggle ? habitInput : null,
+
+            }).then(() => {
+                Alert.alert("Habit updated successfully")
+                if (!notificationToggle) {
+
+                } else {
+
+                }
+            })
             navigation.navigate("Home", {
-                updatedHabit: `Updated in ${habit?.habitArea}`
+                updatedHabit: `Updated in ${habit?.habitArea}`,
             })
         }
     }
@@ -107,11 +144,11 @@ export default function HabitPage({ route }) {
                         {create === false ? (
                             <UpdateDeleteButton
                                 handleUpdate={handleUpdateHabit}
-                                habitArea={habitArea}
+                                habitArea={habit?.habitArea}
                                 habitInput={habitInput}
                             />
                         ) : (
-                            <View>
+                            <View style={styles.configButton}>
                                 <DefaultButton
                                     buttonText={"Create"}
                                     handlePress={handleCreateHabit}
@@ -121,7 +158,6 @@ export default function HabitPage({ route }) {
                             </View>
                             )
                         }
-
                     </View>
                 </View>
             </ScrollView>

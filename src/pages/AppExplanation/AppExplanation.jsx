@@ -13,17 +13,17 @@ export default function AppExplanation() {
 
     function handleNavHome() {
         navigation.navigate("Home")
-    }
+      }
 
-    function handleSetShowHome() {
+      function handleSetShowHome() {
         if (showHome !== "true") {
-            ChangeNavigationService.setShowHome({ showHome: "true", appStartData })
-                .then(() => {console.log(`Done! ${showHome} ${appStartData}`)})
-                .catch((err) => {console.log(err)})
-            setShowHome("true")
-            handleNavHome()
+          ChangeNavigationService.setShowHome({ showHome: "true", appStartData })
+            .then(() => console.log(`Done! ${showHome} ${appStartData}`))
+            .catch((err) => console.log(err))
+          setShowHome("true")
+          handleNavHome()
         }
-    }
+      }
 
     return(
         <View style={styles.container}>

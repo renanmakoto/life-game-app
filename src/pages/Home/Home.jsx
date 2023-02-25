@@ -6,32 +6,86 @@ import LifeStatus from "../../Components/Common/LifeStatus/LifeStatus"
 import StatusBar from "../../Components/Home/StatusBar/StatusBar"
 import CreateHabit from "../../Components/Home/CreateHabit/CreateHabit"
 import EditHabit from "../../Components/Home/EditHabit/EditHabit"
+import ChangeNavigationService from "../../Services/ChangeNavigationService/"
+import HabitsService from "../../Services/HabitsService"
 
-export default function Home() {
+export default function Home({ route }) {
     const navigation = useNavigation()
-
     const [mindHabit, setMindHabit] = useState()
     const [moneyHabit, setMoneyHabit] = useState()
     const [bodyHabit, setBodyHabit] = useState()
     const [funHabit, setFunHabit] = useState()
+    const [robotDaysLife, setRobotDaysLife] = useState()
+    const today = new Date()
+    const [checks, setChecks] = useState()
 
     function handleNavExplanation() {
         navigation.navigate("AppExplanation")
     }
 
+    const deleteArea = route.params?.deleteArea
+
+    useEffect(() => {
+        HabitsService.findByArea("Mind").then((mind) => {
+            setMindHabit(mind[0])
+          })
+          HabitsService.findByArea("Finance").then((money) => {
+            setMoneyHabit(money[0])
+          })
+          HabitsService.findByArea("Body").then((body) => {
+            setBodyHabit(body[0])
+          })
+          HabitsService.findByArea("Mood").then((fun) => {
+            setFunHabit(fun[0])
+          })
+      
+          if (deleteArea) {
+            if (deleteArea == "Mind") {
+              setMindHabit(null)
+            }
+            if (deleteArea == "Financeiro") {
+              setMoneyHabit(null)
+            }
+            if (deleteArea == "Body") {
+              setBodyHabit(null)
+            }
+            if (deleteArea == "Mood") {
+              setFunHabit(null)
+            }
+          } 
+
+        ChangeNavigationService.checkShowHome(1)
+        .then((showHome) => {
+            const month = `${today.getMonth() + 1}`.padStart(2, "0")
+            const day = `${today.getDate()}`.padStart(2, "0")
+            const formDate = `${today.getFullYear()}-${month}-${day}`
+            const checkDays =
+                new Date(formDate) - new Date(showHome.appStartData) + 1
+
+        if (checkDays === 0) {
+          setRobotDaysLife(checkDays.toString().padStart(2, "0"))
+        } else {
+          setRobotDaysLife(parseInt(checkDays / (1000 * 3600 * 24)))
+        }
+      })
+      .catch((err) => console.log(err))
+  }, [route.params])
+
     return (
         <View style={styles.container}>
             <ScrollView>
                 <View style={{ alignItems: "center" }}>
-                    <Text style={styles.dailyChecks}>❤️ 20 days - ✓ 80 checks</Text> 
+                <Text style={styles.dailyChecks}>
+                    ❤️ {robotDaysLife} {robotDaysLife === "01" ? "day" : "days"} - ✔️{" "}
+                        {checks} {checks === 1 ? "Check" : "Checks"}
+                </Text>
+
                     <LifeStatus />
                     <StatusBar />
                     
                     {mindHabit ? (
                         <EditHabit
-                            habit={mindHabit ?.habitName}
-                            frequency={`${mindHabit?.habitTime} - ${mindHabit?.habitFrequency} `}
-                            habitArea={mindHabit?.habitArea}
+                            habit={mindHabit}
                             checkColor="#90B7F3"
                         />
                         ) : (
@@ -44,9 +98,7 @@ export default function Home() {
 
                     {moneyHabit ? (
                         <EditHabit
-                            habit={moneyHabit ?.habitName}
-                            frequency={`${moneyHabit?.habitTime} - ${moneyHabit?.habitFrequency} `}
-                            habitArea={moneyHabit?.habitArea}
+                            habit={moneyHabit}
                             checkColor="#85BB65"
                         />
                         ) : (
@@ -59,9 +111,7 @@ export default function Home() {
                                          
                     {bodyHabit ? (
                         <EditHabit
-                            habit={bodyHabit ?.habitName}
-                            frequency={`${bodyHabit?.habitTime} - ${bodyHabit?.habitFrequency} `}
-                            habitArea={bodyHabit?.habitArea}
+                            habit={bodyHabit}
                             checkColor="#FF0044"
                         />
                         ) : (
@@ -74,9 +124,7 @@ export default function Home() {
 
                     {funHabit ? (
                         <EditHabit
-                            habit={funHabit ?.habitName}
-                            frequency={`${funHabit?.habitTime} - ${funHabit?.habitFrequency} `}
-                            habitArea={funHabit?.habitArea}
+                            habit={funHabit}
                             checkColor="#FE7F23"
                         />
                         ) : (

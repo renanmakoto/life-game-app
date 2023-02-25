@@ -1,15 +1,23 @@
 import React from "react"
 import { TouchableOpacity, StyleSheet, View, Text } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 
 export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
+    const navigation = useNavigation()
 
     function handleEdit() {
+        navigation.navigate("HabitPage", {
+            create: false,
+            habit,
+        })
         console.log("Edit button clicked")
     }
 
     function handleCheck() {
-        console.log(`Check buttom from ${habitArea}`)
+        console.log(`Check button from ${habit?.habitArea}`)
     }
+
+    const textNotification = habit?.habitNotificationTime == null ? `No notification - ${habit?.habitFrequency}` : `${habit?.habitNotificationTime} - ${habit?.habitFrequency}`
 
     return (
         <TouchableOpacity
@@ -18,18 +26,15 @@ export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
             onPress={handleEdit}
         >
             <View style={styles.habitText}>
-                <Text style={styles.habitTitle}>{habit}</Text>
-                <Text style={styles.habitFrequency}>{frequency}</Text>
+                <Text style={styles.habitTitle}>{habit?.habitName}</Text>
+                <Text style={styles.habitFrequency}>{textNotification}</Text>
             </View>
             <TouchableOpacity 
                 style={[styles.check, {borderColor: checkColor}]}
                 onPress={handleCheck}    
-            >
-            </TouchableOpacity>
+            />
         </TouchableOpacity>
     )
-
-
 }
 
 const styles = StyleSheet.create({
