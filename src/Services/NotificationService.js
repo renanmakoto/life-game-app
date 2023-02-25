@@ -65,5 +65,5 @@ async function deleteNotification(habitInput) {
 
 export default { 
     createNotification, 
-    deleteNotification 
+    deleteNotification,
 }

@@ -109,14 +109,20 @@ export default function HabitPage({ route }) {
             }).then(() => {
                 Alert.alert("Habit updated successfully")
                 if (!notificationToggle) {
-
+                    NotificationService.deleteNotification(habit?.habitName)
                 } else {
-
+                    NotificationService.deleteNotification(habit?.habitName)
+                    NotificationService.createNotification(
+                        habitInput,
+                        frequencyInput,
+                        dayNotification,
+                        timeNotification
+                    )
                 }
-            })
 
-            navigation.navigate("Home", {
-                updatedHabit: `Updated in ${habit?.habitArea}`,
+                navigation.navigate("Home", {
+                    updatedHabit: `Updated in ${habit?.habitArea}`,
+                })
             })
         }
     }
@@ -195,7 +201,7 @@ export default function HabitPage({ route }) {
 
                         {create === false ? (
                             <UpdateDeleteButton
-                                handleUpdate={handleUpdateHabit}
+                                handleUpdate={handleUpdateHabit} 
                                 habitArea={habit?.habitArea}
                                 habitInput={habitInput}
                             />

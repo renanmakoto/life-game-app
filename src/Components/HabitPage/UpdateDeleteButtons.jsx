@@ -2,6 +2,7 @@ import React from "react"
 import { View, StyleSheet, TouchableOpacity, Alert, Text, Image } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import HabitsService from "../../Services/HabitsService"
+import NotificationService from "../../Services/NotificationService"
 
 export default function UpdateDeleteButton({
     habitInput,
