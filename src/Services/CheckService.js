@@ -4,8 +4,27 @@ const checkHabit = (obj) => {
     return new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql(
-                "UPDATE habits SET lastCheck=7, habitIsChecked=7, habitChecks=7 WHERE habitArea=?;",
+                "UPDATE habits SET lastCheck=?, habitIsChecked=?, habitChecks=? WHERE habitArea=?;",
                 [obj.lastCheck, obj.habitIsChecked, obj.habitChecks, obj.habitArea],
+                (_, { rowsAffected }) => {
+                    if (rowsAffected > 0) {
+                        resolve(rowsAffected)
+                    } else {
+                        reject("Error updating obj")
+                    }
+                },
+                (_, error) => reject(error)
+            )
+        })
+    })
+}
+
+const removeCheckHabit = (obj) => {
+    return new Promise((resolve, reject) => {
+        db.transaction((tx) => {
+            tx.executeSql(
+                "UPDATE habits SET habitIsCheked=? WHERE habitArea=?;",
+                [obj.habitIsChecked, obj.habitArea],
                 (_, { rowsAffected }) => {
                     if (rowsAffected > 0) {
                         resolve(rowsAffected)
@@ -21,4 +40,7 @@ const checkHabit = (obj) => {
 
 export default {
     checkHabit,
+    removeCheckHabit,
+    // removeCheck,
+    // checkStatus,
 }
