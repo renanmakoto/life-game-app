@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { TouchableOpacity, StyleSheet, View, Text, Image } from "react-native"
 import { useNavigation } from "@react-navigation/native"
+import CheckService from "../../../Services/CheckService"
 
 export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
     const navigation = useNavigation()
@@ -20,12 +21,12 @@ export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
 
     function handleCheck() {
         if (habitCheck === 0) {
-            // CheckService.checkHabit({
-            //     lastCheck: formatDate,
-            //     habitIsChecked: 1,
-            //     habitChecks: habit?.habitChecks + 1,
-            //     habitArea: habit?.habitArea,
-            // })
+            CheckService.checkHabit({
+                lastCheck: formatDate,
+                habitIsChecked: 1,
+                habitChecks: habit?.habitChecks + 1,
+                habitArea: habit?.habitArea,
+            })
         setHabitCheck(1)
         console.log(`Check button from ${habit?.habitArea}`)
         }
