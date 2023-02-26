@@ -119,7 +119,6 @@ export default function HabitPage({ route }) {
                         timeNotification
                     )
                 }
-
                 navigation.navigate("Home", {
                     updatedHabit: `Updated in ${habit?.habitArea}`,
                 })

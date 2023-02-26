@@ -2,7 +2,12 @@ import React from "react"
 import { Image, StyleSheet, View } from "react-native"
 import { ProgressBar } from "react-native-paper"
 
-export default function StatusBar() {
+export default function StatusBar({
+    mindHabit,
+    moneyHabit,
+    bodyHabit,
+    funHabit
+}) {
     return (
 
         <View style={styles.container}>
@@ -13,7 +18,7 @@ export default function StatusBar() {
                 />
                 <ProgressBar
                     style={styles.progress}
-                    progress={1}
+                    progress={mindHabit}
                     color={"#90B7F3"}
                 />
             </View>
@@ -25,7 +30,7 @@ export default function StatusBar() {
                 />
                 <ProgressBar
                     style={styles.progress}
-                    progress={0}
+                    progress={moneyHabit}
                     color={"#85BB65"}
                 />
             </View>
@@ -37,7 +42,7 @@ export default function StatusBar() {
                 />
                 <ProgressBar
                     style={styles.progress}
-                    progress={0}
+                    progress={bodyHabit}
                     color={"#FF0043"}
                 />
             </View>
@@ -49,7 +54,7 @@ export default function StatusBar() {
                 />
                 <ProgressBar
                     style={styles.progress}
-                    progress={0}
+                    progress={funHabit}
                     color={"#FE7F23"}
                 />
             </View>
