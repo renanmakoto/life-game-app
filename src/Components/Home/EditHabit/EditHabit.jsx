@@ -1,9 +1,14 @@
-import React from "react"
-import { TouchableOpacity, StyleSheet, View, Text } from "react-native"
+import React, { useEffect, useState } from "react"
+import { TouchableOpacity, StyleSheet, View, Text, Image } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 
 export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
     const navigation = useNavigation()
+    const [habitCheck, setHabitCheck] = useState()
+    const [checkImage, setCheckImage] = useState(require("../../../../assets/icons/Mind.png"))
+
+    const checkData = new Date()
+    const formatDate = `${checkData.getFullYear()}-${checkData.getMonth()}-${checkData.getDate()}`
 
     function handleEdit() {
         navigation.navigate("HabitPage", {
@@ -14,8 +19,32 @@ export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
     }
 
     function handleCheck() {
+        if (habitCheck === 0) {
+            // CheckService.checkHabit({
+            //     lastCheck: formatDate,
+            //     habitIsChecked: 1,
+            //     habitChecks: habit?.habitChecks + 1,
+            //     habitArea: habit?.habitArea,
+            // })
+        setHabitCheck(1)
         console.log(`Check button from ${habit?.habitArea}`)
+        }
     }
+
+
+    useEffect(() => {
+        setHabitCheck(habit?.habitIsChecked)
+        if (habit?.habitArea === "Finance") {
+            setCheckImage(require("../../../../assets/icons/Money.png"))
+        }
+        if (habit?.habitArea === "Body") {
+            setCheckImage(require("../../../../assets/icons/Body.png"))
+        }
+        if (habit?.habitArea === "Mood") {
+            setCheckImage(require("../../../../assets/icons/Fun.png"))
+        }
+    }, [])
+
 
     const textNotification = habit?.habitNotificationTime == null ? `No notification - ${habit?.habitFrequency}` : `${habit?.habitNotificationTime} - ${habit?.habitFrequency}`
 
@@ -29,10 +58,17 @@ export default function EditHabit({ habitArea, frequency, habit, checkColor }) {
                 <Text style={styles.habitTitle}>{habit?.habitName}</Text>
                 <Text style={styles.habitFrequency}>{textNotification}</Text>
             </View>
+
+            {habitCheck === 0 ? (
             <TouchableOpacity 
-                style={[styles.check, {borderColor: checkColor}]}
-                onPress={handleCheck}    
+                style={[styles.check, {borderColor: checkColor}]} 
+                onPress={handleCheck} 
             />
+            ) : ( 
+            <TouchableOpacity onPress={handleCheck}>
+                <Image source={checkImage} style={styles.checked} />
+            </TouchableOpacity>
+            )}
         </TouchableOpacity>
     )
 }
@@ -61,5 +97,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: 20,
         height: 20,
+    },
+    checked: {
+        width: 25,
+        height: 25,
     },
 })
