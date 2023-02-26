@@ -8,6 +8,7 @@ import CreateHabit from "../../Components/Home/CreateHabit/CreateHabit"
 import EditHabit from "../../Components/Home/EditHabit/EditHabit"
 import ChangeNavigationService from "../../Services/ChangeNavigationService/"
 import HabitsService from "../../Services/HabitsService"
+import CheckService from "../../Services/CheckService"
 
 export default function Home({ route }) {
     const navigation = useNavigation()
@@ -70,6 +71,10 @@ export default function Home({ route }) {
       })
       .catch((err) => console.log(err))
   }, [route.params])
+
+  useEffect(() => {
+    CheckService.removeCheck(mindHabit, moneyHabit, bodyHabit, funHabit)   
+  }, [mindHabit, moneyHabit, bodyHabit, funHabit])
 
     return (
         <View style={styles.container}>
