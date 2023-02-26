@@ -85,7 +85,12 @@ export default function Home({ route }) {
                         {checks} {checks === 1 ? "Check" : "Checks"}
                 </Text>
 
-                    <LifeStatus />
+                    <LifeStatus 
+                        mindHabit={mindHabit}
+                        moneyHabit={moneyHabit}
+                        bodyHabit={bodyHabit}
+                        funHabit={funHabit}
+                    />
                     <StatusBar 
                         mindHabit={mindHabit?.progressBar}
                         moneyHabit={moneyHabit?.progressBar}

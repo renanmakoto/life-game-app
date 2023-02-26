@@ -1,29 +1,48 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { View, StyleSheet } from "react-native"
 
 import Lottie from 'lottie-react-native'
+import AnimationService from "../../../Services/AnimationService"
 
-export default function LifeStatus() {
+export default function LifeStatus({
+    mindHabit,
+    moneyHabit,
+    bodyHabit,
+    funHabit,
+}) {
+    const [mind, setMind] = useState()
+    const [money, setMoney] = useState()
+    const [robot, setRobot] = useState()
+
+    useEffect(() => {
+        AnimationService.animationStatus(
+            mindHabit?.progressBar,
+            moneyHabit?.progressBar,
+            bodyHabit?.progressBar,
+            funHabit?.progressBar,
+            setMind,
+            setMoney,
+            setRobot,
+        )
+    }, [mindHabit, moneyHabit, bodyHabit, funHabit])
+
     return(
         <View style={styles.container}>
-            <Lottie
-                source = {require("../../../../assets/education/education-100.json")}    
-                autoPlay
-                loop
-                style={styles.educationAnimation}
-            />
-            <Lottie
-                source = {require("../../../../assets/money/money-100.json")}    
-                autoPlay
-                loop
-                style={styles.financeAnimation}
-            />
-            <Lottie
-                source = {require("../../../../assets/robot/robot-100-100.json")}    
-                autoPlay
-                loop
-                style={styles.robotAnimation}
-            />
+            <Lottie 
+                source={mind} 
+                autoPlay 
+                loop 
+                style={styles.educationAnimation} />
+            <Lottie 
+                source={money} 
+                autoPlay 
+                loop 
+                style={styles.financeAnimation} />
+            <Lottie 
+                source={robot} 
+                autoPlay 
+                loop 
+                style={styles.robotAnimation} />
         </View>
     )
 }

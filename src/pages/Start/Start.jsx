@@ -18,7 +18,7 @@ export default function Start() {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ alignItems: "center" }}>
                     <Image 
-                        source={require("../../../assets/icons/logo3.png")} 
+                        source={require("../../../assets/icons/image0.png")} 
                         style={styles.logo}
                     />
                     <LifeStatus/>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: 300,
-        height: 60,
+        height: 80,
         marginTop: 60,
         marginBottom: 20,
     },
