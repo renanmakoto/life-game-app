@@ -1,21 +1,20 @@
 import React from "react"
 import { View, ScrollView, Text, Image, StyleSheet } from "react-native"
-import DefaultButton from "../../Components/Common/DefaultButton/DefaultButton"
 import { useNavigation } from "@react-navigation/native"
 
+import DefaultButton from "../../Components/Common/DefaultButton/DefaultButton"
 import LifeStatus from "../../Components/Common/LifeStatus/LifeStatus"
-import AppExplanation from "../AppExplanation/AppExplanation"
 
 export default function Start() {
     const navigation = useNavigation()
     
     const handleNavAppExplanation = () => {
-        navigation.navigate(AppExplanation)
+        navigation.navigate("AppExplanation")
     }
 
     return (
         <View style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
                 <View style={{ alignItems: "center" }}>
                     <Image 
                         source={require("../../../assets/icons/image0.png")} 

@@ -19,9 +19,9 @@ export default function Home({ route }) {
     const [bodyHabit, setBodyHabit] = useState()
     const [funHabit, setFunHabit] = useState()
     const [robotDaysLife, setRobotDaysLife] = useState()
-    const today = new Date()
     const [checks, setChecks] = useState()
     const [gameOver, setGameOver] = useState(false)
+    const today = new Date()
 
     function handleNavExplanation() {
         navigation.navigate("AppExplanation")

@@ -16,7 +16,7 @@ import SelectHabit from "../../Components/HabitPage/SelectHabit"
 import SelectFrequency from "../../Components/HabitPage/SelectFrequency"
 import Notification from "../../Components/HabitPage/Notification"
 import TimeDataPicker from "../../Components/HabitPage/TimeDataPicker"
-import UpdateDeleteButton from "../../Components/HabitPage/UpdateDeleteButtons"
+import UpdateDeleteButtons from "../../Components/HabitPage/UpdateDeleteButtons"
 import DefaultButton from "../../Components/Common/DefaultButton/DefaultButton"
 import HabitsService from "../../Services/HabitsService"
 
@@ -105,7 +105,6 @@ export default function HabitPage({ route }) {
                 habitNotificationFrequency: dayNotification,
                 habitNotificationTime: timeNotification,
                 habitNotificationId: notificationToggle ? habitInput : null,
-
             }).then(() => {
                 Alert.alert("Habit updated successfully")
                 if (!notificationToggle) {
@@ -199,7 +198,7 @@ export default function HabitPage({ route }) {
                         ) : null}
 
                         {create === false ? (
-                            <UpdateDeleteButton
+                            <UpdateDeleteButtons
                                 handleUpdate={handleUpdateHabit} 
                                 habitArea={habit?.habitArea}
                                 habitInput={habitInput}

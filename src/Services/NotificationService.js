@@ -1,5 +1,4 @@
 import * as Notifications from "expo-notifications"
-
 async function createNotification(
   habitInput,
   frequencyInput,
@@ -28,7 +27,6 @@ async function createNotification(
   }
 
   let triggerNotification
-
   if (frequencyInput === "Daily") {
     triggerNotification = {
       hour: habitHour,
@@ -37,16 +35,16 @@ async function createNotification(
     }
   } else if (frequencyInput === "Weekly") {
     triggerNotification = {
-      hour: habitHour,
-      minute: habitMinutes,
       repeats: true,
       weekday: weekDay,
+      hour: habitHour,
+      minute: habitMinutes,
     }
   }
 
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "Habit reminder",
+      title: "Habit reminder:",
       body: `${habitInput}`,
     },
     identifier: `${habitInput}`,
@@ -57,13 +55,12 @@ async function createNotification(
 }
 
 async function deleteNotification(habitInput) {
-    await Notifications.cancelScheduledNotificationAsync(habitInput)
-    .then(() => {
-        console.log("Deletion successfully made!")
-    })
+  await Notifications.cancelScheduledNotificationAsync(habitInput).then(() => {
+    console.log("Deletion successfully made!")
+  })
 }
 
-export default { 
-    createNotification, 
-    deleteNotification,
+export default {
+  createNotification,
+  deleteNotification,
 }
