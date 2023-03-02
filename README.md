@@ -2,8 +2,6 @@
 
 <p align="center">A mobile game-like app for using in real life. It helps the user takes care of his/her life by studying, caring for financial organization, health and even mental health.</p>
 
-https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>&style=<STYLE>&logo=<LOGO>
-
 
 Node modules installation commands used in this application are listed below:
 
