@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/static/v1?label=by&message=dotExtension&color=151515&style=small&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?message=dotExtension&color=151515&style=small&logo=ghost"/>
 
 <h1 align="center">life-game-app</h1>
 
