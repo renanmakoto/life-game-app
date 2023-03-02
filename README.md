@@ -10,7 +10,7 @@
 
 TECHNOLOGIES USED:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
+<img src="![image](https://user-images.githubusercontent.com/65373130/222400845-56df9fea-fd15-4955-9652-813accd90146.png)" />
 
 
 Node modules installation commands used in this application are listed below:
