@@ -12,6 +12,8 @@ TECHNOLOGIES USED:
 
 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/64px-JavaScript-logo.png" /> </a>
 
+<a href="https://reactjs.org/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/32px-React-icon.svg.png" /> </a>
+
 
 Node modules installation commands used in this application are listed below:
 
