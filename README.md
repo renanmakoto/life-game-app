@@ -2,7 +2,7 @@
 
 <p align="center">A mobile game-like app for using in real life. It helps the user takes care of his/her life by studying, caring for financial organization, health and even mental health.</p>
 
-<img src="https://img.shields.io/static/v1?label=by&message=dotExtension&color=151515&style=for-the-badge&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?label=by&message=dotExtension&color=151515&style=small&logo=ghost"/>
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
