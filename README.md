@@ -3,11 +3,11 @@
 <p align="center">A mobile game-like app for using in real life. It helps the user takes care of his/her life by studying, caring for financial organization, health and even mental health.</p>
 
 <img src="https://img.shields.io/badge/os-Android-green" /> 
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) 
+ 
 <img src="https://img.shields.io/badge/release-v1.0.0-blue" /> 
 <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/npm-v9.3.1-red" /></a> 
-<img src="https://img.shields.io/badge/node.js-v.18.14.0-brightgreen" /> 
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/) 
+<a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node.js-v.18.14.0-brightgreen" /></a> 
+
 
 
 Node modules installation commands used in this application are listed below:
