@@ -2,7 +2,7 @@
 
 <p align="center">A mobile game-like app for using in real life. It helps the user takes care of his/her life by studying, caring for financial organization, health and even mental health.</p>
 
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/) <img src="https://img.shields.io/badge/os-Android-green" />
 
 
 Node modules installation commands used in this application are listed below:
