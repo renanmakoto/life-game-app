@@ -62,4 +62,4 @@ $ npx expo install expo-notifications
 $ npx expo install react-native-screens react-native-safe-area-context
 
 
-<p align="center">With ❤ by <img src=https://img.shields.io/badge/by-dotExtension-black /> <p/>
+<p align="center">With ❤ by <img src=https://img.shields.io/badge/-dotExtension-black /> <p/>
