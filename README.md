@@ -4,6 +4,8 @@
 
 <img src="https://img.shields.io/static/v1?label=by&message=dotExtension&color=151515&style=for-the-badge&logo=ghost"/>
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 
 Node modules installation commands used in this application are listed below:
 
