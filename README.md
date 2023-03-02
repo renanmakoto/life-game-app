@@ -1,4 +1,4 @@
-# life-game-app
+<h1 align="center">life-game-app</h1>
 A mobile game-like app for using in real life I developed using React Native to practice my mobile skills.
 
 Node modules installation commands used in this application are listed below:
