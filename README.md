@@ -8,6 +8,9 @@
 <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node.js-v.18.14.0-brightgreen" /></a> 
 <img src="https://img.shields.io/badge/license-MIT-blue" />
 
+TECHNOLOGIES USED:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
 
 
 Node modules installation commands used in this application are listed below:
