@@ -1,5 +1,3 @@
-<img src="https://img.shields.io/static/v1?message=dotExtension&color=151515&style=small&logo=ghost"/>
-
 <h1 align="center">life-game-app</h1>
 
 <p align="center">A mobile game-like app for using in real life. It helps the user takes care of his/her life by studying, caring for financial organization, health and even mental health.</p>
