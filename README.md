@@ -13,7 +13,7 @@ TECHNOLOGIES USED:
 <a href="https://expo.dev/"><img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/q4q8emquy5eivdz4quk7" style="width: 64px; height: 64px" /></a>
 
 <h4 align="center"> 
-	🚧  dotLife 🚀 Currently being developed...  🚧
+	🚧  dotLife 🚀 Will be uploaded to Google Play Store soon...  🚧
 </h4>
 
 ### Features
@@ -23,9 +23,8 @@ TECHNOLOGIES USED:
 - [x] Database storage
 - [ ] Uploaded to Google Play Store
 
-<div height=100>
-	<video src="https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4" />
-</div>
+<video height=100 src="https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4" />
+
 
 Node modules installation commands used in this application are listed below:
 
