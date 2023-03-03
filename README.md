@@ -24,9 +24,11 @@ TECHNOLOGIES USED:
 - [ ] Uploaded to Google Play Store
 
 
-<video autoplay loop style="width:100%; height: auto; position:absolute; z-index: -1;">
-  <source src="./assets/video-sample.mp4" type="video/mp4" />
-</video>
+
+
+https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4
+
+
 
 Node modules installation commands used in this application are listed below:
 
