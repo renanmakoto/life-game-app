@@ -1,4 +1,4 @@
-<h1 align="center">life-game-app</h1>
+<h1 align="center">dotLife</h1>
 
 <p align="center">A mobile game-like app for using in real life. It helps the user takes care of his/her life by studying, caring for financial organization, health and even mental health.</p>
 
