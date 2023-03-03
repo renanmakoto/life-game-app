@@ -25,9 +25,8 @@ TECHNOLOGIES USED:
 
 
 <video autoplay loop style="width:100%; height: auto; position:absolute; z-index: -1;">
-  <source src="http://syddev.com/jquery.videoBG/assets/tunnel_animation.mp4" type="video/mp4" />
-  <source src="http://syddev.com/jquery.videoBG/assets/tunnel_animation.ogv" type="application/ogg" />
-  <img src="http://syddev.com/jquery.videoBG/assets/tunnel_animation.jpg">
+  <source src="/video-sample.mp4" type="video/mp4" />
+<!--   <img src="http://syddev.com/jquery.videoBG/assets/tunnel_animation.jpg"> -->
 </video>
 
 Node modules installation commands used in this application are listed below:
