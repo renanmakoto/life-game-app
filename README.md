@@ -25,7 +25,8 @@ TECHNOLOGIES USED:
 
 
 
-<video width="50px" height="100px" src="https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4" />
+<video width=50 height=100 src="https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4" />
+
 
 Node modules installation commands used in this application are listed below:
 
