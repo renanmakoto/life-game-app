@@ -23,10 +23,9 @@ TECHNOLOGIES USED:
 - [x] Database storage
 - [ ] Uploaded to Google Play Store
 
-
-
-<video width=50 src="https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4" />
-
+<div width=50>
+	<video src="https://user-images.githubusercontent.com/65373130/222700438-d9d03caf-ac5f-4f4e-aa11-53aad08e3075.mp4" />
+</div>
 
 Node modules installation commands used in this application are listed below:
 
