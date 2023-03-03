@@ -23,7 +23,7 @@ TECHNOLOGIES USED:
 - [x] Database storage
 - [ ] Uploaded to Google Play Store
 
-<video width="320" height="240" controls>
+<video width="10px" height="20px" controls>
   <source src="./video-sample.mp4" type="video/mp4">
 </video>
 
