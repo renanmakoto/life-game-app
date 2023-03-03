@@ -16,6 +16,13 @@ TECHNOLOGIES USED:
 	🚧  dotLife 🚀 Currently being developed...  🚧
 </h4>
 
+### Features
+
+- [x] Design
+- [x] Functionalities
+- [x] Database storage
+- [ ] Uploaded to Google Play Store
+
 
 Node modules installation commands used in this application are listed below:
 
