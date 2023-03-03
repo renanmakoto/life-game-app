@@ -23,6 +23,10 @@ TECHNOLOGIES USED:
 - [x] Database storage
 - [ ] Uploaded to Google Play Store
 
+<video width="320" height="240" controls>
+  <source src="./video-sample.mp4" type="video/mp4">
+</video>
+
 
 Node modules installation commands used in this application are listed below:
 
