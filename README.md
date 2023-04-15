@@ -18,6 +18,10 @@ TECHNOLOGIES USED:
 	🚧  dotLife 🚀 Will be uploaded to Google Play Store soon...  🚧
 </h4>
 
+<p>You may download the app through the link below:</p>
+
+<p>https://expo.dev/artifacts/eas/iQDkvgTRS31rMGHujWCZCB.apk</p>
+
 ### Features
 
 - [x] Design
