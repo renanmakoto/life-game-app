@@ -6,6 +6,10 @@
 
 <img src="https://img.shields.io/badge/os-Android-green" /> <img src="https://img.shields.io/badge/release-v1.0.0-blue" /> <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/npm-v9.3.1-red" /></a> <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node.js-v.18.14.0-brightgreen" /></a> <img src="https://img.shields.io/badge/license-MIT-blue" /> <img src="https://img.shields.io/badge/ReactNative-v0.71.4-blue" /> <img src="https://img.shields.io/badge/React-v18.2.0-blue" /> <img src="https://img.shields.io/badge/Expo-v48.0.5-white" />
 
+<p>You may download the app through the link below:</p>
+
+<p>https://expo.dev/artifacts/eas/iQDkvgTRS31rMGHujWCZCB.apk</p>
+
 TECHNOLOGIES USED:
 
 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/64px-JavaScript-logo.png" /></a>
@@ -18,9 +22,6 @@ TECHNOLOGIES USED:
 	🚧  dotLife 🚀 Will be uploaded to Google Play Store soon...  🚧
 </h4>
 
-<p>You may download the app through the link below:</p>
-
-<p>https://expo.dev/artifacts/eas/iQDkvgTRS31rMGHujWCZCB.apk</p>
 
 ### Features
 
