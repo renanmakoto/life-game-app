@@ -22,7 +22,6 @@ TECHNOLOGIES USED:
 	🚧  dotLife 🚀 Will be uploaded to Google Play Store soon...  🚧
 </h4>
 
-
 ### Features
 
 - [x] Design
