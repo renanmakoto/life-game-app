@@ -24,10 +24,15 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.renanmakoto.mobilelifeapp"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "package": "com.dotextension.dotlife",
+    "versionCode": 1,
+    "extra": {
+      "eas": {
+        "projectId": "932d876b-d86f-4bd9-a762-441ba690eb7b"
+      }
     }
   }
 }
