@@ -56,7 +56,6 @@ export default function TimeDataPicker({
         { key: "Saturday", value: "Sat" },
         { key: "Sunday", value: "Sun" },
     ]
-    //Not necessary to be put externally, for it is too little information
 
     return (
         <View>
